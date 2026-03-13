@@ -3,16 +3,11 @@
 ## ECUACIONES DE LAGRANGE EN 1D
     EL porgrama está pensado para que manualmente se halle la energía cinética y potencial del sistema físico a analizar y que esté te de en formato LaTex, las ecuaciones de Euler-lagrange del sistema (el programa te devuelve la expresión, pero la ecuación hay que igualarla a 0).
 
-    ### Parámetros del programa
-        ### Parámetros del modelo
+### Parámetros del programa
+- `T`: Energía cinética total
+- `V`: Energía potencial total(gravitatorio, elástica...)
 
-        - `T`: Energía cinética total
-        - `V`: Energía potencial total(gravitatorio, elástica...)
+#### Ejemplo
+- `T = 0.5 * m * diff(q, t)**2` #diff(q,t) es la derivada de q respecto de t
+- `V = 0.5 * k * q**2`
 
-
-Matrices
-    Libreria propia con varias operaciones y optimizaciones para que sea mas intuitivo y rapido
-
-Proyectos
-    -Desintegración radioactiva: usando Monte-Carlo .ipynb
-    -Hallar Lagrangiano, Hamiltoniano y ecuaciones canonicas, resultas: todo en un .py

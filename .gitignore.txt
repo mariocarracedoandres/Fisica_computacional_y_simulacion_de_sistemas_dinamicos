@@ -1,9 +1,10 @@
-# Extensiones de archivos auxiliares de LaTeX
+# Extensiones de archivos auxiliares de LaTeX a ignorar
 *.aux
 *.log
 *.out
 *.toc
-*.gz
+*.synctex.gz
 *.fdb_latexmk
 *.fls
-*.synctex.gz
+*.bbl
+*.blg

@@ -1,0 +1,9 @@
+# Extensiones de archivos auxiliares de LaTeX
+*.aux
+*.log
+*.out
+*.toc
+*.gz
+*.fdb_latexmk
+*.fls
+*.synctex.gz

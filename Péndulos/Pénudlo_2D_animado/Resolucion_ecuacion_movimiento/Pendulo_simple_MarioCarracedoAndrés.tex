@@ -1,0 +1,268 @@
+\documentclass[11pt]{article}
+
+
+% Useful packages
+\usepackage[utf8]{inputenc}  % para acentos y ñ
+\usepackage[english,spanish]{babel}
+
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=1.75cm]{geometry}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\usepackage{listings} % poner codigo
+\lstset{
+	inputencoding=utf8,
+	extendedchars=true,
+	literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1
+	{ó}{{\'o}}1 {ú}{{\'u}}1 {ñ}{{\~n}}1
+	{Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1
+	{Ó}{{\'O}}1 {Ú}{{\'U}}1 {Ñ}{{\~N}}1,
+}
+
+
+\usepackage{float}
+
+\usepackage{graphicx}
+
+%%%%%%%%%%%%% Referencias
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+\usepackage{cleveref}
+
+\graphicspath{ {images/} }
+
+\usepackage{geometry}
+
+\usepackage{fancyhdr}
+%\setlength{\headheight}{14pt}
+\pagestyle{fancy} 
+
+\usepackage{multicol}
+\setlength{\columnsep}{0,5cm}
+
+\usepackage{lipsum}
+
+\usepackage[usenames]{color}
+
+%tablas
+\usepackage{tabularx} %ancho de tablas
+\usepackage{longtable}
+\usepackage{ltablex}
+\keepXColumns
+
+\usepackage{caption} % títulos de las tablas/figuras
+\captionsetup{font=small} % letra de todos los caption en pequeña
+\captionsetup[table]{name=Tabla}
+\usepackage{subcaption} % este y el anteriori para poner imagenes juntas
+
+%Bibliografia
+\usepackage{hyperref}
+\usepackage{cite}
+%\usepackage{balance}%evita que se partan cosas
+
+%%%%%%%%%%%%%%% NUEVOS COMANDOS
+\newcommand{\comillas}[1]{"#1"} %comillas dobles
+\newcommand{\mult}[0]{\!\cdot\!} %comillas dobles
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+	\renewcommand\contentsname{\huge{Índice General}}
+	
+	
+	
+	\begin{center}
+		
+		
+		
+		\vspace*{3,5cm} % Espacio entre tope superior y titulo   
+		\textbf{\Huge Ecuaciones del movimiento del péndulo simple mediante conservación de la energía y el formalismo lagrangiano}
+		
+		
+		%\bigskip
+		%\bigskip
+		
+		%\textbf{\Huge dominio de la frecuencia}
+		
+		\bigskip
+		\bigskip
+		\bigskip
+		\bigskip
+		\bigskip
+		\bigskip
+		
+		\LARGE{Mario Carracedo Andrés}\\
+		\LARGE{}
+		
+		\bigskip
+		\bigskip
+		\bigskip
+		\bigskip
+		
+		\includegraphics[height=10cm, scale=2]{imagenes/Pendulo_simple}
+		
+	\end{center}
+	
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	\newpage
+	
+	\fancyhead{} 
+	\fancyhead[l]{Mario Carracedo Andrés}
+	\fancyhead[r]{Universidad de Valladolid}
+	\fancyfoot[c]{\thepage}
+	
+	% ÍNDICE
+	\tableofcontents 
+	\newpage
+	\section{Consideraciones}
+		Para resolver el sistema vamos a tener en cuenta que la cuerda de longitud l, no varía su longitud y que la masa no es un sólido rígido, sino puntual. \\
+		\\
+		Además tomaremos un sistema de referencia, S(x,y) centrado en el punto de unión de la cuerda con el techo, de la siguiente forma:
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[scale=0.5]{imagenes/Pendulo_simple_SR}
+			\caption{}		
+			\label{Fig: Pendulo SR}
+		\end{figure}
+	\section{Conservación de la energía}
+		Lo primero de todo será construir nuestro vector de posición $\vec{r}$, en donde aunque parezca que nuestra masa dependa de $\hat{x}$ y $\hat{y}$, realmente la masa va a describir una cuerva en un plano 2D, por ende quiere decir que vamos a poder tener una coordenada generalizada solo, $\theta$.
+		
+		\begin{align*}
+			\vec{r} = \left( x \;,\; y\right)  = \left(  l\sin(\theta) \;,\; -l\cos(\theta) \right) 
+		\end{align*}
+		
+		Veamos la velocidad de la masa. Como \comillas{S} es inercial, solamente tenemos que derivarlo sin tener mas consideraciones.
+		
+		\begin{align*}
+			\dot{\vec{r}} = \left( l\cos(\theta)\dot{\theta} \;,\; l\sin(\theta)\dot{\theta} \right) 
+		\end{align*}
+		
+		Veamos la energía cinética \comillas{T}
+		
+		\begin{align*}
+			T = \frac{m}{2} \left| \dot{\vec{r}} \right|^2  = \frac{m}{2}\sqrt{(l^2\cos^2(\theta)\dot{\theta}^2 + l^2\sin^2(\theta)\dot{\theta}^2)^2} = \frac{m}{2}l^2\dot{\theta}^2
+		\end{align*}
+		
+		Veamos la energía potencial \comillas{V}, en donde mi origen de potencial $V = 0$ está justo situado en el techo., la masa esta situado a una altura de $h = y = l\sin(\theta) \;,\; -l\cos(\theta)$
+		
+		\begin{align*}
+			V = mgy = mg\left( -l\cos(\theta) \right) 
+		\end{align*}
+		
+		Veamos la energía $E = T + V$
+		\begin{align}
+			E = T + V = \frac{m}{2}l^2\dot{\theta}^2 - mg\left( l\cos(\theta) \right) 
+			\label{eq: E}
+		\end{align}
+		
+		Como no consideramos ninguna fuerza disipativa, la energía se conserva, y por ende la derivada temporal de la energía es 0.
+		
+		\begin{align*}
+			\frac{dE}{dt} = 0
+			\\
+			0 = ml^2\dot{\theta}\ddot{\theta} + mgl\sin(\theta)\dot{\theta}
+		\end{align*}
+		
+		Imponemos que $\dot{\theta} \neq 0$, pues si no es 0, entonces no hay movimiento, así podemos dividir entre $\dot{\theta}$:
+		
+		\begin{align*}
+			0 = ml^2\ddot{\theta} + mgl\sin(\theta)
+		\end{align*}
+		
+		\begin{align}
+			\boxed{\ddot{\theta} + \frac{g}{l}\sin(\theta) = 0}
+		\end{align}	
+		
+		Esta expresión será la que definirá el movimiento de nuestra masa. En el código se utilizó de la siguiente manera
+		\begin{align*}
+			\begin{cases}
+				\frac{d\theta}{dt} = \dot{\theta}
+				\\
+				\frac{d^2\theta}{dt^2} = -\frac{g}{l}\sin(\theta)
+			\end{cases}
+		\end{align*}
+		
+		Si ponemos que $y_o = \theta ; y_1 = \dot{\theta} ; \dfrac{dy_1}{dt} = \ddot{\theta}$, entonces:
+		
+		\begin{equation}
+			\boxed{
+			\begin{cases}
+				\frac{dy_0}{dt} = y_1 
+				\\
+				\frac{dy_1}{dt} = -\frac{g}{L} \sin(y_0)
+			\end{cases}
+			}	
+		\end{equation}
+		
+		Esta es la que se implementará tal cual en el código
+		
+		
+		\section{Periodo}
+		En el programa, será necesario tomar un tiempo inicial y una final. Para el final decidí tomar 2 veces el periodo. De esta manera, la animación volver a su posición inicial y al actualizarse para volver a empezar, habría un corte en la animación.\\
+		\\
+		Para ello no podemos tomar que el periodo sea $2\pi\sqrt{\frac{l}{g}}$, pues esto equivaldría a uno en el que aproximamos par ángulos pequeños. En su lugar tomaré uno corregido para ángulos grandes \cite{marion2014dinamica}:
+		
+		En el punto de máxima amplitud $\theta_0$, la velocidad es nula ($\dot{\theta} = 0$), por lo que:
+		\begin{equation}
+			E_0 = -mgL\cos\theta_0
+			\label{eq: E_0}
+		\end{equation}
+		
+		Como la energía se conserva, podemos igualar \hyperref[eq: E_0]{(\ref{eq: E_0})} con \hyperref[eq: E]{(\ref{eq: E})}:
+		\begin{equation*}
+			\frac{1}{2} m L^2 \left( \frac{d\theta}{dt} \right)^2 - mgL\cos\theta = -mgL\cos\theta_0
+		\end{equation*}
+		
+		Despejamos la velocidad angular $\frac{d\theta}{dt}$:
+		\begin{gather*}
+			\left( \frac{d\theta}{dt} \right)^2 = \frac{2g}{L} (\cos\theta - \cos\theta_0)
+			\\
+			\frac{d\theta}{dt} = \sqrt{\frac{2g}{L}} \sqrt{\cos\theta - \cos\theta_0}
+		\end{gather*}
+		
+		El periodo total $T$ es cuatro veces el tiempo invertido en desplazarse desde $\theta = 0$ hasta $\theta = \theta_0$:
+		\begin{equation*}
+			T = 4 \int_{0}^{\theta_0} \sqrt{\frac{L}{2g}} \frac{d\theta}{\sqrt{\cos\theta - \cos\theta_0}}
+		\end{equation*}
+		
+		Utilizando la identidad trigonométrica $\cos\alpha = 1 - 2\sin^2(\alpha/2)$:
+		\begin{equation*}
+			\cos\theta - \cos\theta_0 = 2 \left( \sin^2\frac{\theta_0}{2} - \sin^2\frac{\theta}{2} \right)
+		\end{equation*}
+		
+		Sustituyendo en la integral:
+		\begin{equation*}
+			T = 4\sqrt{\frac{L}{g}} \int_{0}^{\theta_0} \frac{d\theta}{2\sqrt{\sin^2\frac{\theta_0}{2} - \sin^2\frac{\theta}{2}}}
+		\end{equation*}
+		
+		La solución exacta de esta integral es una integral elíptica completa de primera especie. Su expansión en serie de potencias es:
+		\begin{equation*}
+			T = 2\pi\sqrt{\frac{L}{g}} \left( 1 + \frac{1}{4}\sin^2\frac{\theta_0}{2} + \frac{9}{64}\sin^4\frac{\theta_0}{2} + \dots \right)
+		\end{equation*}
+		
+		Para ángulos pequeños, aplicamos la aproximación $\sin\frac{\theta_0}{2} \approx \frac{\theta_0}{2}$ (en radianes). Elevando al cuadrado:
+		\begin{equation}
+			\sin^2\frac{\theta_0}{2} \approx \left( \frac{\theta_0}{2} \right)^2 = \frac{\theta_0^2}{4}
+		\end{equation}
+		
+		Sustituyendo este término en la expansión:
+		\begin{equation}
+			T \approx 2\pi\sqrt{\frac{L}{g}} \left( 1 + \frac{1}{4} \cdot \frac{\theta_0^2}{4} \right) = 2\pi\sqrt{\frac{L}{g}} \left( 1 + \frac{1}{16}\theta_0^2 \right)
+		\end{equation}
+		
+		Finalmente, para $10$ ciclos y convirtiendo $\theta_0$ de grados a radianes:
+		\begin{equation}
+			\boxed{T_{final} = 10 \cdot 2\pi\sqrt{\frac{L}{g}} \left( 1 + \frac{1}{16} \left( \theta_0 \cdot \frac{\pi}{180} \right)^2 \right)}
+		\end{equation}
+		
+		\renewcommand{\refname}{Bibliografía}
+		\bibliographystyle{plain}  % O puedes usar otro estilo: ieeetr, apa, etc.
+		\bibliography{Bibliografia}
+\end{document}

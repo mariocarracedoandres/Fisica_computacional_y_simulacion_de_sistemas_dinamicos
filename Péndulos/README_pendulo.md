@@ -7,9 +7,5 @@
 - `L`: longitud de la cuerda inexstensible
 - `angulo_0`: angulo inicial(grados) entre 0 y 180
 
-#### Ejemplo
-- `T = 0.5 * m * diff(q, t)**2` #diff(q,t) es la derivada de q respecto de t
-- `V = 0.5 * k * q**2`
-
 ## Péndulo_doble_2D_animado
     Aún tengo que preprar el pdf con el desarrollo teórico

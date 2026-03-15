@@ -8,7 +8,7 @@ El péndulo consiste de una masa que cuelga de una cuerda y por acción de la gr
 - `angulo_0`: angulo inicial(grados) entre 0 y 180
 
 ## Péndulo_doble_2D_animado
-Los siguientes son pedidos al ejecutar el código. Por lo que no es necesario modificar nada
+Los siguientes datos son pedidos al ejecutar el código. Por lo que no es necesario modificar nada.
 ### Parámetros del programa
 - `L1`: longitud de la cuerda inexstensible 1(metros) (conecta sujeccion al techo con la masa 1)
 - `L2`: longitud de la cuerda inexstensible 2(metros) (conecta las 2 masas)

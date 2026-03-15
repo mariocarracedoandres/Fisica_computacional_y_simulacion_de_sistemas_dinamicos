@@ -1,0 +1,201 @@
+\documentclass[11pt]{article}
+
+
+% Useful packages
+\usepackage[utf8]{inputenc}  % para acentos y ñ
+\usepackage[english,spanish]{babel}
+
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=1.75cm]{geometry}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\usepackage{listings} % poner codigo
+\lstset{
+	inputencoding=utf8,
+	extendedchars=true,
+	literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1
+	{ó}{{\'o}}1 {ú}{{\'u}}1 {ñ}{{\~n}}1
+	{Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1
+	{Ó}{{\'O}}1 {Ú}{{\'U}}1 {Ñ}{{\~N}}1,
+}
+
+
+\usepackage{float}
+
+\usepackage{graphicx}
+
+%%%%%%%%%%%%% Referencias
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+\usepackage{cleveref}
+
+\graphicspath{ {images/} }
+
+\usepackage{geometry}
+
+\usepackage{fancyhdr}
+%\setlength{\headheight}{14pt}
+\pagestyle{fancy} 
+
+\usepackage{multicol}
+\setlength{\columnsep}{0,5cm}
+
+\usepackage{lipsum}
+
+\usepackage[usenames]{color}
+
+%tablas
+\usepackage{tabularx} %ancho de tablas
+\usepackage{longtable}
+\usepackage{ltablex}
+\keepXColumns
+
+\usepackage{caption} % títulos de las tablas/figuras
+\captionsetup{font=small} % letra de todos los caption en pequeña
+\captionsetup[table]{name=Tabla}
+\usepackage{subcaption} % este y el anteriori para poner imagenes juntas
+
+%Bibliografia
+\usepackage{hyperref}
+\usepackage{cite}
+%\usepackage{balance}%evita que se partan cosas
+
+%%%%%%%%%%%%%%% NUEVOS COMANDOS
+\newcommand{\comillas}[1]{"#1"} %comillas dobles
+\newcommand{\mult}[0]{\!\cdot\!} %comillas dobles
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+	
+	\begin{center}
+		\vspace*{3,5cm}
+		\textbf{\Huge Ecuaciones del movimiento del péndulo doble mediante formalismo lagrangiano}
+		
+		\bigskip\bigskip\bigskip
+		\LARGE{Mario Carracedo Andrés}
+		
+		\bigskip\bigskip
+		\includegraphics[height=8cm]{imagenes/Pendulo_doble} % Asegúrate de tener esta imagen
+	\end{center}
+	
+	\newpage
+	\pagestyle{fancy}
+	\fancyhead[l]{Mario Carracedo Andrés}
+	\fancyfoot[c]{\thepage}
+	
+	\section{Consideraciones}
+	Para el péndulo doble, consideramos dos cuerdas de longitudes $l_1$ y $l_2$ inextensibles, y dos masas puntuales $m_1$ y $m_2$. El sistema de referencia $S(x,y)$ se sitúa en el anclaje superior.
+	
+	\section{Ecuaciones del movimiento}
+	Definimos los vectores de posición para ambas masas en función de los ángulos $\theta_1$ y $\theta_2$:
+	\begin{align*}
+		\vec{r}_1 &= (l_1\sin\theta_1, -l_1\cos\theta_1) \\
+		\vec{r}_2 &= (l_1\sin\theta_1 + l_2\sin\theta_2, -l_1\cos\theta_1 - l_2\cos\theta_2)
+	\end{align*}
+	
+	Las velocidades se obtienen derivando respecto al tiempo:
+	\begin{align*}
+		\dot{\vec{r}}_1 &= (l_1\cos\theta_1\dot{\theta}_1, l_1\sin\theta_1\dot{\theta}_1) \\
+		\dot{\vec{r}}_2 &= (l_1\cos\theta_1\dot{\theta}_1 + l_2\cos\theta_2\dot{\theta}_2, l_1\sin\theta_1\dot{\theta}_1 + l_2\sin\theta_2\dot{\theta}_2)
+	\end{align*}
+	
+	La energía cinética total es \comillas{T} = 
+	\begin{align*}
+		T = \frac{1}{2}m_1|\dot{\vec{r}}_1|^2 + \frac{1}{2}m_2|\dot{\vec{r}}_2|^2 = \frac{1}{2}(m_1+m_2)l_1^2\dot{\theta}_1^2 + \frac{1}{2}m_2l_2^2\dot{\theta}_2^2 + m_2l_1l_2\dot{\theta}_1\dot{\theta}_2\cos(\theta_1-\theta_2)
+	\end{align*}
+	
+	La energía potencial $V$ con origen en el techo es:
+	\begin{align*}
+		V = -(m_1+m_2)gl_1\cos\theta_1 - m_2gl_2\cos\theta_2
+	\end{align*}
+	
+	Aplicamos el formalismo de Euler-Lagrange, obtenemos el sistema de ecuaciones acopladas. 
+	\\
+	Hallo Lagrangiano $L = T - V$
+	
+	\begin{equation}
+		L = \frac{1}{2}(m_1+m_2)l_1^2\dot{\theta}_1^2 + \frac{1}{2}m_2l_2^2\dot{\theta}_2^2 + m_2l_1l_2\dot{\theta}_1\dot{\theta}_2\cos(\theta_1-\theta_2) + (m_1+m_2)gl_1\cos\theta_1 + m_2gl_2\cos\theta_2
+	\end{equation}
+	\textbf{ Ecuaciones Euler-lagrange para $\theta_1$}
+	
+	\begin{equation*}
+		\frac{d}{dt}\left( \frac{\partial L}{\partial \dot{\theta}_1} \right) - \frac{\partial L}{\partial \theta_1} = 0
+	\end{equation*}
+	
+	Derivada temporal del momento conjugado $\left(P_{\theta_1} = \frac{\partial L}{\partial \dot{\theta}_1} \right)$ 
+	
+	\begin{align*}
+		\frac{d}{dt} \left( \frac{\partial L}{\partial \dot{\theta}_1} \right) = (m_1 + m_2)l_1^2\ddot{\theta}_1 + m_2l_1l_2\ddot{\theta}_2\cos(\theta_1 - \theta_2) - m_2l_1l_2\dot{\theta}_2(\dot{\theta}_1 - \dot{\theta}_2)\sin(\theta_1 - \theta_2)
+	\end{align*}
+	
+	Derivada respecto a la coordenada
+	\begin{align*}
+		\frac{\partial L}{\partial \theta_1} = -m_2l_1l_2\dot{\theta}_1\dot{\theta}_2\sin(\theta_1 - \theta_2) - (m_1 + m_2)gl_1\sin\theta_1
+	\end{align*}
+	
+	Por ende la primera ecuación del movimiento:
+
+	\begin{equation}
+		(m_1 + m_2)l_1 \ddot{\theta}_1 + m_2 l_2 \ddot{\theta}_2 \cos(\theta_1 - \theta_2) + m_2 l_2 \dot{\theta}_2^2 \sin(\theta_1 - \theta_2) + (m_1 + m_2)g \sin\theta_1 = 0
+		\label{eq: tita 1}
+	\end{equation}
+	
+	\textbf{ Ecuaciones Euler-lagrange para $\theta_2$}
+	
+	Derivada temporal del momento conjugado $\left(P_{\theta_2} = \frac{\partial L}{\partial \dot{\theta}_2} \right)$ 
+	\begin{align*}
+		\frac{d}{dt} \left( \frac{\partial L}{\partial \dot{\theta}_2} \right) = m_2 l_2^2 \ddot{\theta}_2 + m_2 l_1 l_2 \ddot{\theta}_1 \cos(\theta_1 - \theta_2) - m_2 l_1 l_2 \dot{\theta}_1 (\dot{\theta}_1 - \dot{\theta}_2) \sin(\theta_1 - \theta_2)
+	\end{align*}
+	
+	Derivada respecto a la coordenada
+	\begin{align*}
+		\frac{\partial L}{\partial \theta_2} = m_2 l_1 l_2 \dot{\theta}_1 \dot{\theta}_2 \sin(\theta_1 - \theta_2) - m_2 g l_2 \sin\theta_2
+	\end{align*}
+	
+	En donde la segunda ecuación del movimiento y tras dividir por $m_2l_2$:
+	
+	\begin{equation}
+		l_2 \ddot{\theta}_2 + l_1 \ddot{\theta}_1 \cos(\theta_1 - \theta_2) - l_1 \dot{\theta}_1^2 \sin(\theta_1 - \theta_2) + g \sin\theta_2 = 0
+		\label{eq: tita 2}
+	\end{equation}
+	
+	Tenemos por lo tanto, un sistema de ecuaciones acopladas, juntando \hyperref[eq: tita 1]{(\ref{eq: tita 1})} con \hyperref[eq: tita 2]{(\ref{eq: tita 2})}:
+	\begin{equation}
+		\boxed{
+			\begin{cases}
+				(m_1 + m_2)l_1 \ddot{\theta}_1 + m_2 l_2 \ddot{\theta}_2 \cos(\theta_1 - \theta_2) + m_2 l_2 \dot{\theta}_2^2 \sin(\theta_1 - \theta_2) + (m_1 + m_2)g \sin\theta_1 = 0
+				\\
+				l_2 \ddot{\theta}_2 + l_1 \ddot{\theta}_1 \cos(\theta_1 - \theta_2) - l_1 \dot{\theta}_1^2 \sin(\theta_1 - \theta_2) + g \sin\theta_2 = 0
+				\label{eq: tita 2}
+			\end{cases}
+		}
+	\end{equation}
+	
+	\section{Desacoplamiento}
+	
+	Para el código, necesitamos despejar $\ddot{\theta_1}$ y $\ddot{\theta_2}$ en función de las demás, para ello se pondrán las ecuaciones en forma matricial: $M \begin{pmatrix} \ddot{\theta_1} \\ \ddot{\theta_2} \end{pmatrix} = b$
+	
+	\begin{align}
+		\boxed{\begin{pmatrix} 
+			(m_1 + m_2) l_1 & m_2 l_2 \cos(\theta_1 - \theta_2) \\ 
+			l_1 \cos(\theta_1 - \theta_2) & l_2 
+		\end{pmatrix}
+		\begin{pmatrix} 
+			\ddot{\theta_1} \\ 
+			\ddot{\theta_2}
+		\end{pmatrix}
+		=
+		\begin{pmatrix} 
+			-m_2 l_2 \dot{\theta}_2^2 \sin(\theta_1 - \theta_2) - (m_1 + m_2) g \sin(\theta_1) \\ 
+			l_1 \dot{\theta}_1^2 \sin(\theta_1 - \theta_2) - g \sin(\theta_2) 
+		\end{pmatrix}}	
+	\end{align}
+	
+	\section{Periodo}
+	Debido a que el péndulo doble es un sistema caótico, pequeños cambios en la posición inicial dan lugar a enormes cambios. De esta manera aunque el péndulo pueda volver mas o menos a la posición inicial, no se pueden tomar infinitos decimales de precisión por lo que a la larga el movimiento sería distinto. En el código, el tiempo final $T_{final}$ se definirá de forma manual para observar la evolución de las trayectorias.
+	
+\end{document}

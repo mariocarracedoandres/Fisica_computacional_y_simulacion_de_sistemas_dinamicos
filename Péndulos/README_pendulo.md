@@ -8,4 +8,18 @@
 - `angulo_0`: angulo inicial(grados) entre 0 y 180
 
 ## Péndulo_doble_2D_animado
-    Aún tengo que preprar el pdf con el desarrollo teórico
+### Parámetros del programa
+- `L1`: longitud de la cuerda inexstensible 1(metros) (conecta sujeccion al techo con la masa 1)
+- `L2`: longitud de la cuerda inexstensible 2(metros) (conecta las 2 masas)
+- `m1`: masa 1(Kg) (masa (roja) mas cercana al punto de sujección)
+- `m2`: masa 2(Kg) (masa (azul))
+- `angulo1_0`: angulo inicial(grados) entre 0 y 180 de la masa 1 (respecto a la normal al techo/suelo)
+- `angulo1_0`: angulo inicial(grados) entre 0 y 180 de la masa 2 (respecto a la normal al techo/suelo)
+
+### Ejemplo del archivo mp4
+- `L1 = 1`
+- `L2 = 1`
+- `m1 = 1`
+- `m2 = 1`
+- `angulo1_0 = 100`
+- `angulo1_0 = 30`

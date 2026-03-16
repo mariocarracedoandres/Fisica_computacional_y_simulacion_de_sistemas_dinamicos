@@ -179,15 +179,15 @@ def update(num):
 ani = FuncAnimation(fig, update, frames=len(t), init_func=init, blit=True, interval=h*1000) #FuncAnimation(fig, update, frames=len(t), init_func=init, blit=True, interval=1)
 
 
-#Guardo la animacion: quitar el # a lo de abajo si quiero guardar la animacion en la carpeta donde esta el .py
-directorio_del_script = os.path.dirname(os.path.abspath(__file__)) #nos da la ruta donde esta el .py
+### Guardo la animacion: quitar el # a lo de abajo si quiero guardar la animacion en la carpeta donde esta el .py
+#directorio_del_script = os.path.dirname(os.path.abspath(__file__)) #nos da la ruta donde esta el .py
 
-nombre_archivo = "Pendulo_doble_2D_animado(mp4).mp4" #nombre de archivo a guardar
-ruta_guardado = os.path.join(directorio_del_script, nombre_archivo) #para guardar el archivo en la carpeta donde esta el .py
+#nombre_archivo = "Pendulo_doble_2D_animado(mp4).mp4" #nombre de archivo a guardar
+#ruta_guardado = os.path.join(directorio_del_script, nombre_archivo) #para guardar el archivo en la carpeta donde esta el .py
 
-writer = FFMpegWriter(fps=int(1/h), metadata=dict(artist='Yo'), bitrate=1800)
-ani.save(ruta_guardado, writer=writer)
-print(f"Animación guardada como: {nombre_archivo}")
-print(f"Archivo guardado en: {ruta_guardado}")
+#writer = FFMpegWriter(fps=int(1/h), metadata=dict(artist='Yo'), bitrate=1800)
+#ani.save(ruta_guardado, writer=writer)
+#print(f"Animación guardada como: {nombre_archivo}")
+#print(f"Archivo guardado en: {ruta_guardado}")
 
 plt.show() # siempre despues de ani.save

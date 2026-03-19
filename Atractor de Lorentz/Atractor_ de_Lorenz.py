@@ -215,16 +215,16 @@ ani = FuncAnimation(fig, update, frames=len(t), init_func=init, blit=True, inter
 n, n_txt = input_parametro("Velocidad de la animación (ej: 1=normal, 2=algo, 3=rápido)")
 
 
-###############-----############### Guardo la animacion
-directorio_del_script = os.path.dirname(os.path.abspath(__file__)) #nos da la ruta donde esta el .py
-#Guardamos imagen
-nombre_archivo_imagen = "Atractor_de_Lorenz(png).png" #nombre de archivo a guardar como imagen
-ruta_guardado_imagen = os.path.join(directorio_del_script, nombre_archivo_imagen) #para guardar el archivo en la carpeta donde esta el .py
-fig_img.savefig(ruta_guardado_imagen, dpi=200) #esto es para guardar la imagen, con el nombre y la ruta que hemos definido antes, y con el dpi(pixeles por pulgada)
-print(f"Imagen guardada como: {nombre_archivo_imagen}")
-print(f"Archivo guardado en: {ruta_guardado_imagen}")
+###############-----############### Guardo la animacion : quitar el # a lo de abajo si quiero guardar la animacion en la carpeta donde esta el .py
+#directorio_del_script = os.path.dirname(os.path.abspath(__file__)) #nos da la ruta donde esta el .py
+#Guardamos imagen (no quitar este #)
+#nombre_archivo_imagen = "Atractor_de_Lorenz(png).png" #nombre de archivo a guardar como imagen
+#ruta_guardado_imagen = os.path.join(directorio_del_script, nombre_archivo_imagen) #para guardar el archivo en la carpeta donde esta el .py
+#fig_img.savefig(ruta_guardado_imagen, dpi=200) #esto es para guardar la imagen, con el nombre y la ruta que hemos definido antes, y con el dpi(pixeles por pulgada)
+#print(f"Imagen guardada como: {nombre_archivo_imagen}")
+#print(f"Archivo guardado en: {ruta_guardado_imagen}")
 
-#Guardamos video : quitar el # a lo de abajo si quiero guardar la animacion en la carpeta donde esta el .py
+#Guardamos video (no quitar este #)
 #nombre_archivo_video = "Atractor_de_Lorenz(mp4).mp4" #nombre de archivo a guardar
 #ruta_guardado = os.path.join(directorio_del_script, nombre_archivo_video) #para guardar el archivo en la carpeta donde esta el .py
 
@@ -233,7 +233,7 @@ print(f"Archivo guardado en: {ruta_guardado_imagen}")
 #print(f"Animación guardada como: {nombre_archivo_video}")
 #print(f"Archivo guardado en: {ruta_guardado}")
 
-#plt.tight_layout() #para que no se solapen los subplots, siempre despues de configurar los subplots y antes de mostrar la figura
+###############-----############### Graficar resultados
 plt.show() # siempre despues de ani.save 
 
  

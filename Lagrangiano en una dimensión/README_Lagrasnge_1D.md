@@ -14,6 +14,6 @@
 ## Como ejecutar
 1. Asegurate de tener un entorno virtual activado
 2. Instalar las dependencias:
-""
+"""
 pip install -r requirements.txt
-""
+"""

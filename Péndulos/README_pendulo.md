@@ -7,6 +7,13 @@ El péndulo consiste de una masa que cuelga de una cuerda y por acción de la gr
 - `L`: longitud de la cuerda inexstensible
 - `angulo_0`: angulo inicial(grados) entre 0 y 180
 
+### Como ejecutar el
+1. Asegurate de tener un entorno virtual activado
+2. Instalar las dependencias:
+```
+pip install -r requirements.txt
+```
+
 ## Péndulo_doble_2D_animado
 Los siguientes datos son pedidos al ejecutar el código. Por lo que no es necesario modificar nada.
 ### Parámetros del programa
@@ -24,3 +31,10 @@ Los siguientes datos son pedidos al ejecutar el código. Por lo que no es necesa
 - `m2 = 1`
 - `angulo1_0 = 100`
 - `angulo1_0 = 30`
+
+### Como ejecutar el
+1. Asegurate de tener un entorno virtual activado
+2. Instalar las dependencias:
+```
+pip install -r requirements.txt
+```

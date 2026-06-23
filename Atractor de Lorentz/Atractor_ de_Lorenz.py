@@ -212,7 +212,7 @@ ani = FuncAnimation(fig, update, frames=len(t), init_func=init, blit=True, inter
 
 
 # vemos rapidez de la animacion a exportar
-n, n_txt = input_parametro("Velocidad de la animación (ej: 1=normal, 2=algo, 3=rápido)")
+n, n_txt = input_parametro("Velocidad de la animación (ej: 1=normal, 2=algo rápido, 3=rápido)")
 
 
 ###############-----############### Guardo la animacion : quitar el # a lo de abajo si quiero guardar la animacion en la carpeta donde esta el .py

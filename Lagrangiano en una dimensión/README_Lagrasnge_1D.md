@@ -11,3 +11,9 @@
 - `T = 0.5 * m * diff(q, t)**2` #diff(q,t) es la derivada de q respecto de t
 - `V = 0.5 * k * q**2`
 
+## Como ejecutar
+1. Asegurate de tener un entorno virtual activado
+2. Instalar las dependencias:
+""
+pip install -r requirements.txt
+""

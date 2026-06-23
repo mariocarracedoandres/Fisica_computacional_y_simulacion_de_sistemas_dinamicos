@@ -40,3 +40,10 @@ Si se quiere guardar, habrá un comentario al final del codigo donde se dirá qu
 Bibliografía:
 - [Aractor de Lorenz](https://es.wikipedia.org/wiki/Atractor_de_Lorenz):
     De aquí se obtiene el sistema de EDO. y los valores de los parámetros (a, b, c)
+
+## Como ejecutar
+1. Asegurate de crear un entorno virtual y activarlo
+2. Instalar las dependencias:
+```
+pip install -r requirements.txt
+```

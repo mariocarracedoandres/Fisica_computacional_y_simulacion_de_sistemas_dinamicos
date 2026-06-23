@@ -77,6 +77,7 @@
 		
 		\bigskip\bigskip\bigskip
 		\LARGE{Mario Carracedo Andrés}
+		\LARGE{}
 		
 		\bigskip\bigskip
 		\includegraphics[height=8cm]{imagenes/Pendulo_doble} % Asegúrate de tener esta imagen
@@ -85,7 +86,13 @@
 	\newpage
 	\pagestyle{fancy}
 	\fancyhead[l]{Mario Carracedo Andrés}
+	\fancyhead[r]{}
 	\fancyfoot[c]{\thepage}
+	
+	% ÍNDICE
+	\tableofcontents 
+	\newpage
+	
 	
 	\section{Consideraciones}
 	Para el péndulo doble, consideramos dos cuerdas de longitudes $l_1$ y $l_2$ inextensibles, y dos masas puntuales $m_1$ y $m_2$. El sistema de referencia $S(x,y)$ se sitúa en el anclaje superior.
@@ -170,7 +177,6 @@
 				(m_1 + m_2)l_1 \ddot{\theta}_1 + m_2 l_2 \ddot{\theta}_2 \cos(\theta_1 - \theta_2) + m_2 l_2 \dot{\theta}_2^2 \sin(\theta_1 - \theta_2) + (m_1 + m_2)g \sin\theta_1 = 0
 				\\
 				l_2 \ddot{\theta}_2 + l_1 \ddot{\theta}_1 \cos(\theta_1 - \theta_2) - l_1 \dot{\theta}_1^2 \sin(\theta_1 - \theta_2) + g \sin\theta_2 = 0
-				\label{eq: tita 2}
 			\end{cases}
 		}
 	\end{equation}
